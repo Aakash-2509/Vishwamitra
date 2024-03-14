@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:vishwamitra_lang_screen/screens/createprofilescreen.dart';
 
 class LanguageSelectionPage extends StatefulWidget {
   const LanguageSelectionPage({super.key});
@@ -150,26 +152,27 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
                       : continuebuttonBlue,
                   onPressed: _selectedLanguageIndex != -1
                       ? () {
-                          showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              String selectedLanguageName =
-                                  languages[_selectedLanguageIndex]['name']!;
-                              return CupertinoAlertDialog(
-                                title: const Text('Language Selected'),
-                                content: Text(
-                                    'You have selected $selectedLanguageName.'),
-                                actions: <Widget>[
-                                  CupertinoDialogAction(
-                                    child: const Text('OK'),
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                  ),
-                                ],
-                              );
-                            },
-                          );
+                        Get.to(const CreateProfileScreen());
+                          // showDialog(
+                          //   context: context,
+                          //   builder: (BuildContext context) {
+                          //     String selectedLanguageName =
+                          //         languages[_selectedLanguageIndex]['name']!;
+                          //     return CupertinoAlertDialog(
+                          //       title: const Text('Language Selected'),
+                          //       content: Text(
+                          //           'You have selected $selectedLanguageName.'),
+                          //       actions: <Widget>[
+                          //         CupertinoDialogAction(
+                          //           child: const Text('OK'),
+                          //           onPressed: () {
+                          //             Navigator.of(context).pop();
+                          //           },
+                          //         ),
+                          //       ],
+                          //     );
+                          //   },
+                          // );
                         }
                       : null,
                   child: const Text('Continue'),
