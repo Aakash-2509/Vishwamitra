@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
@@ -14,23 +15,24 @@ class _HomeTabState extends State<HomeTab> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          flexibleSpace: const Padding(
-            padding: EdgeInsets.only(left: 16.0, top: 20),
+          flexibleSpace: Padding(
+            padding: const EdgeInsets.only(left: 16.0, top: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Icon(Icons.home_sharp),
+                const Icon(Icons.home_sharp),
                 SizedBox(
-                  width: 6,
+                  width: 6.w,
                 ),
                 Text(
                   "Welcome Screen",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                  style:
+                      TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w700),
                 ),
                 SizedBox(
-                  width: 128.36,
+                  width: 128.36.w,
                 ),
-                Icon(Icons.notifications)
+                const Icon(Icons.notifications)
               ],
             ),
           ),

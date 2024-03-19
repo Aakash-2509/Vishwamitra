@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:vishwamitra_lang_screen/screens/lastsubmitscreen.dart';
+import 'package:vishwamitra_lang_screen/screens/createprofile/lastsubmitscreen.dart';
 
 class CreateProfileNextScreen extends StatefulWidget {
   const CreateProfileNextScreen({super.key});
@@ -12,10 +13,8 @@ class CreateProfileNextScreen extends StatefulWidget {
 }
 
 class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
-  // final _formKey = GlobalKey<FormState>();
   Color detailColor = const Color(0xFFD8D8D8);
   Color cupertinoButtonColor = const Color(0xFF1694EF);
-  // final TextEditingController _textFieldController = TextEditingController();
   bool isChecked = false;
   bool isCheckedPT = false;
   bool isCheckedFV = false;
@@ -55,6 +54,40 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
   String selectionMessage5 = '';
   String selectionMessage = '';
 
+  void showSelectionDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text("Your Selections"),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                if (isChecked) const Text("Full Time"),
+                if (isCheckedPT) const Text("Part Time"),
+                if (isCheckedFV) const Text("Field Volunteer"),
+                if (isCheckedOV) const Text("Online Volunteer"),
+                if (isCheckedDS) const Text("Day Shift (9am - 8pm)"),
+                if (isCheckedNS) const Text("Night Shift (10pm - 6am)"),
+                if (isCheckedC1) const Text("Koregaon Park/Pune Region, MH"),
+                if (isCheckedC2) const Text("Shivaji Nagar/Pune Region, MH"),
+                if (isCheckedC3) const Text("Mysore/Mysuru Region, KA"),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('OK'),
+              onPressed: () {
+                Get.off(() => const Congratulation());
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -67,31 +100,31 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 32,
-                  height: 32,
+                  width: 32.w,
+                  height: 32.h,
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.blue.shade400, width: 2),
                     borderRadius: BorderRadius.circular(100),
                   ),
-                  child: const CircleAvatar(
+                  child: CircleAvatar(
                       minRadius: BorderSide.strokeAlignOutside,
                       backgroundColor: Colors.transparent,
                       child: Icon(
                         Icons.check,
-                        color: Color(0xFF1694EF),
-                        size: 18,
+                        color: const Color(0xFF1694EF),
+                        size: 18.sp,
                       )),
                 ),
                 SizedBox(
-                  width: 100,
-                  height: 1,
+                  width: 100.w,
+                  height: 1.h,
                   child: Container(
                     color: detailColor,
                   ),
                 ),
                 Container(
-                  height: 32,
-                  width: 32,
+                  height: 32.h,
+                  width: 32.w,
                   decoration: BoxDecoration(
                     border: Border.all(color: cupertinoButtonColor, width: 2),
                     borderRadius: BorderRadius.circular(30),
@@ -104,61 +137,62 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                 ),
               ],
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
                   'About me',
                   style: TextStyle(
-                      color: Color(0xFF1694EF),
+                      color: const Color(0xFF1694EF),
                       fontWeight: FontWeight.w400,
-                      fontSize: 14),
+                      fontSize: 14.sp),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(right: 10),
                   child: Text(
                     'Deatils',
                     style: TextStyle(
-                        color: Color(0xFF1694EF),
+                        color: const Color(0xFF1694EF),
                         fontWeight: FontWeight.w600,
-                        fontSize: 14),
+                        fontSize: 14.sp),
                   ),
                 ),
               ],
             ),
-            const SizedBox(
-              height: 40,
+            SizedBox(
+              height: 40.h,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  const Text("Preferred work type",
+                  Text("Preferred work type",
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 20.sp,
                         fontWeight: FontWeight.w600,
                       )),
-                  const SizedBox(
-                    height: 1,
+                  SizedBox(
+                    height: 1.h,
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(right: 5),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 5),
                     child: Text(
                         'This will help us to find the right volunteer service for you',
                         style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
-                            color: Color(0xFF848383))),
+                            color: const Color(0xFF848383))),
                   ),
-                  const SizedBox(
-                    height: 32,
+                  SizedBox(
+                    height: 32.h,
                   ),
-                  const Text(
+                  Text(
                     'Preferred employment type',
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+                    style:
+                        TextStyle(fontWeight: FontWeight.w600, fontSize: 16.sp),
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: 16.h),
                   Padding(
                       padding: const EdgeInsets.only(right: 17.0),
                       child: Column(
@@ -170,14 +204,14 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                               style: const TextStyle(color: Colors.red),
                             ),
                           if (selectionMessage1.isNotEmpty)
-                            const SizedBox(height: 16),
+                            SizedBox(height: 16.h),
                           Column(
                             children: [
                               Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(4),
                                   border: Border.all(
-                                      width: 1,
+                                      width: 1.w,
                                       color: isChecked
                                           ? const Color(0xFF1694EF)
                                           : Colors.grey),
@@ -202,8 +236,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                   ],
                                 ),
                               ),
-                              const SizedBox(
-                                height: 8,
+                              SizedBox(
+                                height: 8.h,
                               ),
                               Container(
                                 decoration: BoxDecoration(
@@ -238,14 +272,15 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                           ),
                         ],
                       )),
-                  const SizedBox(
-                    height: 32,
+                  SizedBox(
+                    height: 32.h,
                   ),
-                  const Text(
+                  Text(
                     'Preferred volunteer',
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+                    style:
+                        TextStyle(fontWeight: FontWeight.w600, fontSize: 16.sp),
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: 16.h),
                   Padding(
                     padding: const EdgeInsets.only(right: 17.0),
                     child: Column(
@@ -257,7 +292,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                             style: const TextStyle(color: Colors.red),
                           ),
                         if (selectionMessage2.isNotEmpty)
-                          const SizedBox(height: 16),
+                          SizedBox(height: 16.h),
                         Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4),
@@ -286,8 +321,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                             ],
                           ),
                         ),
-                        const SizedBox(
-                          height: 8,
+                        SizedBox(
+                          height: 8.h,
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -320,14 +355,15 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    height: 32,
+                  SizedBox(
+                    height: 32.h,
                   ),
-                  const Text(
+                  Text(
                     'Preferred Shift',
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+                    style:
+                        TextStyle(fontWeight: FontWeight.w600, fontSize: 16.sp),
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: 16.h),
                   Padding(
                     padding: const EdgeInsets.only(right: 17.0),
                     child: Column(
@@ -339,7 +375,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                             style: const TextStyle(color: Colors.red),
                           ),
                         if (selectionMessage3.isNotEmpty)
-                          const SizedBox(height: 16),
+                          SizedBox(height: 16.h),
                         Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4),
@@ -368,8 +404,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                             ],
                           ),
                         ),
-                        const SizedBox(
-                          height: 8,
+                        SizedBox(
+                          height: 8.h,
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -402,8 +438,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    height: 32,
+                  SizedBox(
+                    height: 32.h,
                   ),
                   const Padding(
                     padding: EdgeInsets.only(right: 10.0),
@@ -413,24 +449,24 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                           TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
                     ),
                   ),
-                  const Text(
+                  Text(
                     'Volunteer services are show based on your preferred city',
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: 12.sp,
                       fontWeight: FontWeight.w400,
-                      color: Color(0xFF848383),
+                      color: const Color(0xFF848383),
                     ),
                   ),
-                  const SizedBox(
-                    height: 16,
+                  SizedBox(
+                    height: 16.h,
                   ),
                   SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
-                          height: 40,
-                          width: screenWidth * 0.9,
+                          height: 40.h,
+                          width: screenWidth * 0.9.w,
                           child: GestureDetector(
                             child: InputDecorator(
                               decoration: InputDecoration(
@@ -451,8 +487,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                       }
                                     });
                                   },
-                                  decoration: const InputDecoration(
-                                    prefixIcon: SizedBox(
+                                  decoration: InputDecoration(
+                                    prefixIcon: const SizedBox(
                                       child: Icon(
                                         Icons.search,
                                         color: Color(0xFF9D9D9D),
@@ -461,9 +497,9 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                     hintText:
                                         "Search by volunteer title/service",
                                     hintStyle: TextStyle(
-                                      fontSize: 12,
+                                      fontSize: 12.sp,
                                       fontWeight: FontWeight.w400,
-                                      color: Color(0xFFAFADAD),
+                                      color: const Color(0xFFAFADAD),
                                     ),
                                   ),
                                   onChanged: (value) {
@@ -481,9 +517,9 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                           ),
                         ),
                         SizedBox(
-                          width: 325,
+                          width: 325.w,
                           child: SizedBox(
-                            height: isListVisible ? 150 : 0,
+                            height: isListVisible ? 150.h : 0.h,
                             child: isListVisible
                                 ? filteredList.isNotEmpty
                                     ? InputDecorator(
@@ -524,11 +560,11 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                 : const SizedBox(),
                           ),
                         ),
-                        const SizedBox(
-                          height: 8,
+                        SizedBox(
+                          height: 8.h,
                         ),
                         SizedBox(
-                          height: selectedAddresses.isNotEmpty ? 180 : 0,
+                          height: selectedAddresses.isNotEmpty ? 180.h : 0.h,
                           child: selectedAddresses.isNotEmpty
                               ? SizedBox(
                                   width: double.infinity,
@@ -579,7 +615,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                                     icon:
                                                         const Icon(Icons.close),
                                                     color: Colors.white,
-                                                    iconSize: 15,
+                                                    iconSize: 15.sp,
                                                     onPressed: () {
                                                       setState(() {
                                                         selectedAddresses
@@ -601,17 +637,18 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    height: 8,
+                  SizedBox(
+                    height: 8.h,
                   ),
-                  const SizedBox(
-                    height: 32,
+                  SizedBox(
+                    height: 32.h,
                   ),
-                  const Text(
+                  Text(
                     'Suggested cities',
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+                    style:
+                        TextStyle(fontWeight: FontWeight.w600, fontSize: 16.sp),
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: 16.h),
                   Padding(
                     padding: const EdgeInsets.only(right: 17.0),
                     child: Column(
@@ -623,7 +660,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                             style: const TextStyle(color: Colors.red),
                           ),
                         if (selectionMessage4.isNotEmpty)
-                          const SizedBox(height: 16),
+                          SizedBox(height: 16.h),
                         Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4),
@@ -652,8 +689,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                             ],
                           ),
                         ),
-                        const SizedBox(
-                          height: 8,
+                        SizedBox(
+                          height: 8.h,
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -683,8 +720,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                             ],
                           ),
                         ),
-                        const SizedBox(
-                          height: 8,
+                        SizedBox(
+                          height: 8.h,
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -717,31 +754,32 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    height: 32,
+                  SizedBox(
+                    height: 32.h,
                   ),
-                  const Text(
+                  Text(
                     'What volunteer type/service are you looking for?',
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+                    style:
+                        TextStyle(fontWeight: FontWeight.w600, fontSize: 20.sp),
                   ),
-                  const SizedBox(
-                    height: 4,
+                  SizedBox(
+                    height: 4.h,
                   ),
-                  const Text(
+                  Text(
                     'You can select up to 5 preferences',
                     style: TextStyle(
                         fontWeight: FontWeight.w400,
-                        fontSize: 12,
-                        color: Color(0xFF848383)),
+                        fontSize: 12.sp,
+                        color: const Color(0xFF848383)),
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: 16.h),
                   SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
-                          height: 40,
-                          width: screenWidth * 0.9,
+                          height: 40.h,
+                          width: screenWidth * 0.9.w,
                           child: GestureDetector(
                             child: InputDecorator(
                               decoration: InputDecoration(
@@ -763,8 +801,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                       }
                                     });
                                   },
-                                  decoration: const InputDecoration(
-                                    prefixIcon: SizedBox(
+                                  decoration: InputDecoration(
+                                    prefixIcon: const SizedBox(
                                       child: Icon(
                                         Icons.search,
                                         color: Color(0xFF9D9D9D),
@@ -773,9 +811,9 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                     hintText:
                                         "Search by volunteer title/service",
                                     hintStyle: TextStyle(
-                                      fontSize: 12,
+                                      fontSize: 12.sp,
                                       fontWeight: FontWeight.w400,
-                                      color: Color(0xFFAFADAD),
+                                      color: const Color(0xFFAFADAD),
                                     ),
                                   ),
                                   onChanged: (value) {
@@ -793,9 +831,9 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                           ),
                         ),
                         SizedBox(
-                          width: 325,
+                          width: 325.w,
                           child: SizedBox(
-                            height: isListVisible ? 150 : 0,
+                            height: isListVisible ? 150.h : 0.h,
                             child: isListVisible
                                 ? filteredList2.isNotEmpty
                                     ? InputDecorator(
@@ -836,11 +874,12 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                 : const SizedBox(),
                           ),
                         ),
-                        const SizedBox(
-                          height: 8,
+                        SizedBox(
+                          height: 8.h,
                         ),
                         SizedBox(
-                          height: selectedVolunteerTypes.isNotEmpty ? 180 : 0,
+                          height:
+                              selectedVolunteerTypes.isNotEmpty ? 180.h : 0.h,
                           child: selectedVolunteerTypes.isNotEmpty
                               ? SizedBox(
                                   width: double.infinity,
@@ -892,7 +931,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                                     icon:
                                                         const Icon(Icons.close),
                                                     color: Colors.white,
-                                                    iconSize: 15,
+                                                    iconSize: 15.sp,
                                                     onPressed: () {
                                                       setState(() {
                                                         selectedVolunteerTypes
@@ -914,50 +953,50 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    height: 32,
+                  SizedBox(
+                    height: 32.h,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 17.0),
                     child: Container(
                       decoration: const BoxDecoration(color: Color(0xFFF4FAFE)),
-                      width: 342,
-                      height: 372,
+                      width: 342.w,
+                      height: 372.h,
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const SizedBox(
-                              height: 16,
+                            SizedBox(
+                              height: 16.h,
                             ),
-                            const Text(
+                            Text(
                               'Suggested volunteer types/services',
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
-                                  fontSize: 12,
-                                  color: Color(0xFF848383)),
+                                  fontSize: 12.sp,
+                                  color: const Color(0xFF848383)),
                             ),
                             if (selectionMessage.isNotEmpty)
                               Padding(
                                 padding: const EdgeInsets.only(top: 8.0),
                                 child: Text(
                                   selectionMessage,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     color: Colors.red,
-                                    fontSize: 12,
+                                    fontSize: 12.sp,
                                   ),
                                 ),
                               ),
-                            const SizedBox(
-                              height: 24,
+                            SizedBox(
+                              height: 24.h,
                             ),
                             ListView.separated(
                               shrinkWrap: true,
                               itemCount: volunteerTypes.length,
                               separatorBuilder:
                                   (BuildContext context, int index) {
-                                return const SizedBox(height: 8);
+                                return SizedBox(height: 8.h);
                               },
                               itemBuilder: (BuildContext context, int index) {
                                 return Align(
@@ -970,7 +1009,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                     },
                                     child: FittedBox(
                                       child: Container(
-                                        height: 36,
+                                        height: 36.h,
                                         decoration: BoxDecoration(
                                           color: isSelected[index]
                                               ? Colors.blue
@@ -989,7 +1028,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                           child: Text(
                                             volunteerTypes[index],
                                             style: TextStyle(
-                                              fontSize: 12,
+                                              fontSize: 12.sp,
                                               color: isSelected[index]
                                                   ? Colors.white
                                                   : const Color(0xFF3D3C3C),
@@ -1007,8 +1046,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 100,
+                  SizedBox(
+                    height: 100.h,
                   )
                 ],
               ),
@@ -1046,8 +1085,12 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
               setState(() {
                 selectionMessage = 'Select at least 1 option.';
               });
-            } else {
-              Get.to(() => const Congratulation());
+            }
+            if (selectionMessage1.isEmpty &&
+                selectionMessage2.isEmpty &&
+                selectionMessage3.isEmpty &&
+                selectionMessage4.isEmpty) {
+              showSelectionDialog(context);
             }
           },
           color: cupertinoButtonColor,

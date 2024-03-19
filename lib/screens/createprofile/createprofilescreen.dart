@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:vishwamitra_lang_screen/screens/createprofilenextscreen.dart';
+import 'package:vishwamitra_lang_screen/screens/createprofile/createprofilenextscreen.dart';
 
 class CreateProfileScreen extends StatefulWidget {
   const CreateProfileScreen({super.key});
@@ -17,8 +18,7 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
   TextEditingController phoneController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
-  TextEditingController emailController =
-      TextEditingController(); // Key for the form
+  TextEditingController emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +26,14 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
       appBar: AppBar(),
       body: SingleChildScrollView(
         child: Form(
-          // Wrap the body in a Form widget
           key: _formKey, // Set the key of the form
           child: Column(children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 32,
-                  height: 32,
+                  width: 32.w,
+                  height: 32.h,
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.blue.shade400, width: 2),
                     borderRadius: BorderRadius.circular(100),
@@ -46,15 +45,15 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                   ),
                 ),
                 SizedBox(
-                  width: 100,
-                  height: 1,
+                  width: 100.w,
+                  height: 1.h,
                   child: Container(
                     color: detailColor,
                   ),
                 ),
                 Container(
-                  height: 32,
-                  width: 32,
+                  height: 32.h,
+                  width: 32.w,
                   decoration: BoxDecoration(
                     border: Border.all(color: detailColor),
                     borderRadius: BorderRadius.circular(30),
@@ -66,30 +65,30 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                 ),
               ],
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
                   'About me',
                   style: TextStyle(
-                      color: Color(0xFF1694EF),
+                      color: const Color(0xFF1694EF),
                       fontWeight: FontWeight.w600,
-                      fontSize: 14),
+                      fontSize: 14.sp),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(right: 10),
                   child: Text(
                     'Deatils',
                     style: TextStyle(
-                        color: Color(0xFFD8D8D8),
+                        color: const Color(0xFFD8D8D8),
                         fontWeight: FontWeight.w400,
-                        fontSize: 14),
+                        fontSize: 14.sp),
                   ),
                 ),
               ],
             ),
-            const SizedBox(
-              height: 40,
+            SizedBox(
+              height: 40.h,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 16.0),
@@ -99,16 +98,15 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                   const Text("About Me",
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  const Text('Full Name',
-                      style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
                   SizedBox(
-                    width: 320,
+                    height: 16.h,
+                  ),
+                  Text('Full Name',
+                      style: TextStyle(
+                          fontSize: 14.sp, fontWeight: FontWeight.bold)),
+                  SizedBox(
+                    width: 320.w,
                     child: TextFormField(
-                      // Change TextField to TextFormField
                       controller: nameController,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -122,14 +120,14 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(5.0)),
                           hintText: "e.g. Anand Sharma",
-                          hintStyle: const TextStyle(
-                              fontSize: 14, color: Colors.grey)),
+                          hintStyle:
+                              TextStyle(fontSize: 14.sp, color: Colors.grey)),
                     ),
                   ),
-                  const SizedBox(height: 32),
+                  SizedBox(height: 32.h),
                   const Text('Email (Optional)'),
                   SizedBox(
-                    width: 320,
+                    width: 320.w,
                     child: TextFormField(
                       controller: emailController,
                       validator: (value) {
@@ -148,18 +146,18 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                         ),
                         hintText: "e.g. anandsharma123@gmail.com",
                         hintStyle:
-                            const TextStyle(fontSize: 14, color: Colors.grey),
+                            TextStyle(fontSize: 14.sp, color: Colors.grey),
                       ),
                     ),
                   ),
-                  const Row(
+                  Row(
                     children: [
-                      Icon(Icons.info, size: 10),
+                      Icon(Icons.info, size: 10.sp),
                       Expanded(
                         child: Text(
                           "  Receive updates on volunteer service opportunities & application",
                           style: TextStyle(
-                            fontSize: 11,
+                            fontSize: 11.sp,
                             color: Colors.grey,
                           ),
                           overflow: TextOverflow.clip,
@@ -167,10 +165,10 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                       )
                     ],
                   ),
-                  const SizedBox(height: 32),
+                  SizedBox(height: 32.h),
                   const Text('Phone Number'),
                   SizedBox(
-                    width: 320,
+                    width: 320.w,
                     child: TextFormField(
                       controller: phoneController,
                       keyboardType: TextInputType.phone,
@@ -188,7 +186,7 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                               borderRadius: BorderRadius.circular(5.0)),
                           hintText: "e.g. 6276483564",
                           hintStyle:
-                              const TextStyle(fontSize: 14, color: Colors.grey),
+                              TextStyle(fontSize: 14.sp, color: Colors.grey),
                           counterText: ""),
                     ),
                   ),

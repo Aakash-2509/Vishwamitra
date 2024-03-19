@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:vishwamitra_lang_screen/screens/hometab.dart';
-import 'package:vishwamitra_lang_screen/screens/librarytab.dart';
-import 'package:vishwamitra_lang_screen/screens/profiletab.dart';
-import 'package:vishwamitra_lang_screen/screens/searchexploretab.dart';
+import 'package:vishwamitra_lang_screen/screens/homescreens/hometab.dart';
+import 'package:vishwamitra_lang_screen/screens/homescreens/librarytab.dart';
+import 'package:vishwamitra_lang_screen/screens/homescreens/profiletab.dart';
+import 'package:vishwamitra_lang_screen/screens/homescreens/searchexploretab.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
