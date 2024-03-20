@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:vishwamitra_lang_screen/screens/homescreens/notificationscreen.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
@@ -32,7 +34,14 @@ class _HomeTabState extends State<HomeTab> {
                 SizedBox(
                   width: 128.36.w,
                 ),
-                const Icon(Icons.notifications)
+                InkWell(
+                  onTap: () {
+                    Get.to(NotificationScreen());
+                  },
+                  child: const Icon(
+                    Icons.notifications,
+                  ),
+                )
               ],
             ),
           ),

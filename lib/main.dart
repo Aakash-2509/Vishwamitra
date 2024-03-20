@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: child,
+          home: child,  
         );
       },
       child: const LanguageSelectionPage(),
