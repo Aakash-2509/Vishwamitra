@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:vishwamitra_lang_screen/screens/homescreens/hometab.dart';
-import 'package:vishwamitra_lang_screen/screens/homescreens/librarytab.dart';
-import 'package:vishwamitra_lang_screen/screens/homescreens/profiletab.dart';
-import 'package:vishwamitra_lang_screen/screens/homescreens/searchexploretab.dart';
+import 'package:vishwamitra_lang_screen/screens/homescreens/tabs/hometab.dart';
+import 'package:vishwamitra_lang_screen/screens/homescreens/tabs/librarytab.dart';
+import 'package:vishwamitra_lang_screen/screens/homescreens/tabs/profiletab.dart';
+import 'package:vishwamitra_lang_screen/screens/homescreens/tabs/searchexploretab.dart';
+import 'package:vishwamitra_lang_screen/utils/colors.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -58,8 +59,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               label: 'Profile',
             ),
           ],
-          selectedItemColor: Colors.blue,
-          unselectedItemColor: Colors.black,
+          selectedItemColor: ColorConst.blueColor,
+          unselectedItemColor: ColorConst.blackCOlor,
           type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,

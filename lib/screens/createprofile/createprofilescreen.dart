@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:vishwamitra_lang_screen/screens/createprofile/createprofilenextscreen.dart';
+import 'package:vishwamitra_lang_screen/utils/colors.dart';
 
 class CreateProfileScreen extends StatefulWidget {
   const CreateProfileScreen({super.key});
@@ -12,8 +13,6 @@ class CreateProfileScreen extends StatefulWidget {
 }
 
 class _CreateProfileScreenState extends State<CreateProfileScreen> {
-  Color detailColor = const Color(0xFFD8D8D8);
-  Color cupertinoButtonColor = const Color(0xFF1694EF);
   TextEditingController nameController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -35,32 +34,34 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                   width: 32.w,
                   height: 32.h,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.blue.shade400, width: 2),
+                    border: Border.all(color: ColorConst.blueColor, width: 2),
                     borderRadius: BorderRadius.circular(100),
                   ),
                   child: const CircleAvatar(
                     minRadius: BorderSide.strokeAlignOutside,
-                    backgroundColor: Colors.transparent,
-                    child: Text('1', style: TextStyle(color: Colors.black)),
+                    backgroundColor: ColorConst.transparent,
+                    child: Text('1',
+                        style: TextStyle(color: ColorConst.blackCOlor)),
                   ),
                 ),
                 SizedBox(
                   width: 100.w,
                   height: 1.h,
                   child: Container(
-                    color: detailColor,
+                    color: ColorConst.detailColor,
                   ),
                 ),
                 Container(
                   height: 32.h,
                   width: 32.w,
                   decoration: BoxDecoration(
-                    border: Border.all(color: detailColor),
+                    border: Border.all(color: ColorConst.detailColor),
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    child: Text('2', style: TextStyle(color: detailColor)),
+                  child: const CircleAvatar(
+                    backgroundColor: ColorConst.transparent,
+                    child: Text('2',
+                        style: TextStyle(color: ColorConst.detailColor)),
                   ),
                 ),
               ],
@@ -71,7 +72,7 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                 Text(
                   'About me',
                   style: TextStyle(
-                      color: const Color(0xFF1694EF),
+                      color: ColorConst.continuebuttonBlue,
                       fontWeight: FontWeight.w600,
                       fontSize: 14.sp),
                 ),
@@ -80,7 +81,7 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                   child: Text(
                     'Deatils',
                     style: TextStyle(
-                        color: const Color(0xFFD8D8D8),
+                        color: ColorConst.detailColor,
                         fontWeight: FontWeight.w400,
                         fontSize: 14.sp),
                   ),
@@ -120,8 +121,8 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(5.0)),
                           hintText: "e.g. Anand Sharma",
-                          hintStyle:
-                              TextStyle(fontSize: 14.sp, color: Colors.grey)),
+                          hintStyle: TextStyle(
+                              fontSize: 14.sp, color: ColorConst.greyColor)),
                     ),
                   ),
                   SizedBox(height: 32.h),
@@ -145,8 +146,8 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                           borderRadius: BorderRadius.circular(5.0),
                         ),
                         hintText: "e.g. anandsharma123@gmail.com",
-                        hintStyle:
-                            TextStyle(fontSize: 14.sp, color: Colors.grey),
+                        hintStyle: TextStyle(
+                            fontSize: 14.sp, color: ColorConst.greyColor),
                       ),
                     ),
                   ),
@@ -158,7 +159,7 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                           "  Receive updates on volunteer service opportunities & application",
                           style: TextStyle(
                             fontSize: 11.sp,
-                            color: Colors.grey,
+                            color: ColorConst.greyColor,
                           ),
                           overflow: TextOverflow.clip,
                         ),
@@ -185,8 +186,8 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(5.0)),
                           hintText: "e.g. 6276483564",
-                          hintStyle:
-                              TextStyle(fontSize: 14.sp, color: Colors.grey),
+                          hintStyle: TextStyle(
+                              fontSize: 14.sp, color: ColorConst.greyColor),
                           counterText: ""),
                     ),
                   ),
@@ -204,7 +205,7 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
               Get.to(const CreateProfileNextScreen());
             }
           },
-          color: cupertinoButtonColor,
+          color: ColorConst.continuebuttonBlue,
           child: const Text('Next'),
         ),
       ),

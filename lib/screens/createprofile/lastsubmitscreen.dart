@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vishwamitra_lang_screen/screens/createprofile/welcomescreen.dart';
+import 'package:vishwamitra_lang_screen/screens/homescreens/welcomescreen.dart';
+import 'package:vishwamitra_lang_screen/utils/colors.dart';
 
 class Congratulation extends StatefulWidget {
   const Congratulation({super.key});
@@ -22,7 +23,7 @@ class _MyWidgetState extends State<Congratulation> {
             children: [
               IconButton(
                   onPressed: () {},
-                  color: Colors.yellow,
+                  color: ColorConst.yellowColor,
                   icon: const Icon(
                     Icons.star,
                   )),
@@ -33,7 +34,7 @@ class _MyWidgetState extends State<Congratulation> {
 
               IconButton(
                   onPressed: () {},
-                  color: Colors.yellow,
+                  color: ColorConst.yellowColor,
                   icon: const Icon(
                     Icons.star,
                   )),
@@ -67,7 +68,7 @@ class _MyWidgetState extends State<Congratulation> {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.fromLTRB(40, 25, 40, 44),
         child: CupertinoButton(
-          color: Colors.blue,
+          color: ColorConst.blueColor,
           child: const Text('Apply Now'),
           onPressed: () {
             Get.offAll(const WelcomeScreen());

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vishwamitra_lang_screen/screens/createprofile/createprofilescreen.dart';
 
+import '../../utils/colors.dart';
+
 class LanguageSelectionPage extends StatefulWidget {
   const LanguageSelectionPage({super.key});
 
@@ -13,11 +15,11 @@ class LanguageSelectionPage extends StatefulWidget {
 
 class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
   int _selectedLanguageIndex = -1;
-  Color myCustomBlue = const Color(0xFF00406E);
-  Color bgcolor = const Color(0xFF83C4F3);
-  Color mybackgroundBlue = const Color(0xFFE5F2FB);
-  Color continuebuttonBlue = const Color(0xFF1694ef);
-  Color disabledContinueButton = const Color(0x661694EF);
+  // Color myCustomBlue = const Color(0xFF00406E);
+  // Color bgcolor = const Color(0xFF83C4F3);
+  // Color mybackgroundBlue = const Color(0xFFE5F2FB);
+  // Color continuebuttonBlue = const Color(0xFF1694ef);
+  // Color disabledContinueButton = const Color(0x661694EF);
   bool isSelectedButton = false;
   // double abc = 30;
 
@@ -76,15 +78,17 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
                     child: Container(
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: ColorConst.whiteColor,
                         border: Border.all(
-                          color: isSelected ? bgcolor : Colors.grey,
+                          color: isSelected
+                              ? ColorConst.bgcolor
+                              : ColorConst.greyColor,
                           width: 1,
                         ),
                         boxShadow: isSelected
                             ? [
                                 const BoxShadow(
-                                    color: Color.fromARGB(255, 102, 178, 240),
+                                    color: ColorConst.boxShadowColor,
                                     spreadRadius: 1,
                                     blurRadius: 5)
                               ]
@@ -96,13 +100,14 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
                         children: [
                           Text(languages[index]['script']!,
                               style: TextStyle(
-                                  color:
-                                      isSelected ? Colors.blue : Colors.black)),
+                                  color: isSelected
+                                      ? ColorConst.blueColor
+                                      : ColorConst.blackCOlor)),
                           Text(languages[index]['name']!,
                               style: TextStyle(
                                   color: isSelected
-                                      ? Colors.blue
-                                      : Colors.black54)),
+                                      ? ColorConst.blueColor
+                                      : ColorConst.blackCOlor)),
                         ],
                       ),
                     ),
@@ -115,17 +120,17 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
               margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: mybackgroundBlue,
+                color: ColorConst.mybackgroundBlue,
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     'Please choose a language from above.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: myCustomBlue,
+                      color: ColorConst.myCustomBlue,
                       fontSize: 15,
                     ),
                   ),
@@ -133,7 +138,7 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
                     'You can change the language from profile settings later.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: myCustomBlue,
+                      color: ColorConst.myCustomBlue,
                       fontSize: 15,
                     ),
                   ),
@@ -148,31 +153,11 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
                 width: 300,
                 child: CupertinoButton(
                   color: isSelectedButton
-                      ? disabledContinueButton
-                      : continuebuttonBlue,
+                      ? ColorConst.disabledContinueButton
+                      : ColorConst.continuebuttonBlue,
                   onPressed: _selectedLanguageIndex != -1
                       ? () {
-                        Get.to(const CreateProfileScreen());
-                          // showDialog(
-                          //   context: context,
-                          //   builder: (BuildContext context) {
-                          //     String selectedLanguageName =
-                          //         languages[_selectedLanguageIndex]['name']!;
-                          //     return CupertinoAlertDialog(
-                          //       title: const Text('Language Selected'),
-                          //       content: Text(
-                          //           'You have selected $selectedLanguageName.'),
-                          //       actions: <Widget>[
-                          //         CupertinoDialogAction(
-                          //           child: const Text('OK'),
-                          //           onPressed: () {
-                          //             Navigator.of(context).pop();
-                          //           },
-                          //         ),
-                          //       ],
-                          //     );
-                          //   },
-                          // );
+                          Get.to(const CreateProfileScreen());
                         }
                       : null,
                   child: const Text('Continue'),

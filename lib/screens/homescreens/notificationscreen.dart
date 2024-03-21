@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vishwamitra_lang_screen/utils/colors.dart';
 
 // ignore: must_be_immutable
 class NotificationScreen extends StatelessWidget {
@@ -58,13 +59,14 @@ class NotificationScreen extends StatelessWidget {
           return ListTile(
             leading: SizedBox(
               child: CircleAvatar(
+                radius: 25.sp,
                 backgroundImage: AssetImage(notification['profileImage']),
               ),
             ),
             title: Row(
               children: [
                 SizedBox(
-                  width: 219.w,
+                  width: 219.w  ,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -85,7 +87,7 @@ class NotificationScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: 16.w,
+                  width: 7.w,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -94,12 +96,12 @@ class NotificationScreen extends StatelessWidget {
                       notifi_time[index],
                       style: TextStyle(
                         fontSize: 13.sp,
-                        color: const Color(0xFF000000),
+                        color: ColorConst.blackCOlor,
                       ),
                     ),
                     const Icon(
                       Icons.more_horiz,
-                      color: Color(0xFF706E6B),
+                      color: ColorConst.editIconColor,
                     ),
                   ],
                 )

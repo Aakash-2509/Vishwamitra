@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:vishwamitra_lang_screen/screens/createprofile/lastsubmitscreen.dart';
+import 'package:vishwamitra_lang_screen/utils/colors.dart';
 
 class CreateProfileNextScreen extends StatefulWidget {
   const CreateProfileNextScreen({super.key});
@@ -13,8 +14,8 @@ class CreateProfileNextScreen extends StatefulWidget {
 }
 
 class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
-  Color detailColor = const Color(0xFFD8D8D8);
-  Color cupertinoButtonColor = const Color(0xFF1694EF);
+  // Color detailColor = const Color(0xFFD8D8D8);
+  // Color cupertinoButtonColor = const Color(0xFF1694EF);
   bool isChecked = false;
   bool isCheckedPT = false;
   bool isCheckedFV = false;
@@ -103,7 +104,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                   width: 32.w,
                   height: 32.h,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.blue.shade400, width: 2),
+                    border: Border.all(color: ColorConst.blueColor, width: 2),
                     borderRadius: BorderRadius.circular(100),
                   ),
                   child: CircleAvatar(
@@ -111,7 +112,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                       backgroundColor: Colors.transparent,
                       child: Icon(
                         Icons.check,
-                        color: const Color(0xFF1694EF),
+                        color: ColorConst.continuebuttonBlue,
                         size: 18.sp,
                       )),
                 ),
@@ -119,20 +120,21 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                   width: 100.w,
                   height: 1.h,
                   child: Container(
-                    color: detailColor,
+                    color: ColorConst.detailColor,
                   ),
                 ),
                 Container(
                   height: 32.h,
                   width: 32.w,
                   decoration: BoxDecoration(
-                    border: Border.all(color: cupertinoButtonColor, width: 2),
+                    border: Border.all(
+                        color: ColorConst.continuebuttonBlue, width: 2),
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     backgroundColor: Colors.transparent,
                     child: Text('2',
-                        style: TextStyle(color: cupertinoButtonColor)),
+                        style: TextStyle(color: ColorConst.continuebuttonBlue)),
                   ),
                 ),
               ],
@@ -143,7 +145,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                 Text(
                   'About me',
                   style: TextStyle(
-                      color: const Color(0xFF1694EF),
+                      color: ColorConst.continuebuttonBlue,
                       fontWeight: FontWeight.w400,
                       fontSize: 14.sp),
                 ),
@@ -152,7 +154,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                   child: Text(
                     'Deatils',
                     style: TextStyle(
-                        color: const Color(0xFF1694EF),
+                        color: ColorConst.continuebuttonBlue,
                         fontWeight: FontWeight.w600,
                         fontSize: 14.sp),
                   ),
@@ -182,7 +184,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                         style: TextStyle(
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
-                            color: const Color(0xFF848383))),
+                            color: ColorConst.subtitleColor)),
                   ),
                   SizedBox(
                     height: 32.h,
@@ -201,7 +203,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                           if (selectionMessage1.isNotEmpty)
                             Text(
                               selectionMessage1,
-                              style: const TextStyle(color: Colors.red),
+                              style:
+                                  const TextStyle(color: ColorConst.redColor),
                             ),
                           if (selectionMessage1.isNotEmpty)
                             SizedBox(height: 16.h),
@@ -213,8 +216,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                   border: Border.all(
                                       width: 1.w,
                                       color: isChecked
-                                          ? const Color(0xFF1694EF)
-                                          : Colors.grey),
+                                          ? ColorConst.continuebuttonBlue
+                                          : ColorConst.greyColor),
                                 ),
                                 child: Row(
                                   mainAxisAlignment:
@@ -226,7 +229,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                     ),
                                     Checkbox(
                                       value: isChecked,
-                                      activeColor: const Color(0xFF1694EF),
+                                      activeColor:
+                                          ColorConst.continuebuttonBlue,
                                       onChanged: (bool? value) {
                                         setState(() {
                                           isChecked = value ?? false;
@@ -245,8 +249,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                   border: Border.all(
                                       width: 1,
                                       color: isCheckedPT
-                                          ? const Color(0xFF1694EF)
-                                          : Colors.grey),
+                                          ? ColorConst.continuebuttonBlue
+                                          : ColorConst.greyColor),
                                 ),
                                 child: Row(
                                   mainAxisAlignment:
@@ -258,7 +262,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                     ),
                                     Checkbox(
                                       value: isCheckedPT,
-                                      activeColor: const Color(0xFF1694EF),
+                                      activeColor:
+                                          ColorConst.continuebuttonBlue,
                                       onChanged: (bool? value) {
                                         setState(() {
                                           isCheckedPT = value ?? false;
@@ -289,7 +294,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                         if (selectionMessage2.isNotEmpty)
                           Text(
                             selectionMessage2,
-                            style: const TextStyle(color: Colors.red),
+                            style: const TextStyle(color: ColorConst.redColor),
                           ),
                         if (selectionMessage2.isNotEmpty)
                           SizedBox(height: 16.h),
@@ -299,8 +304,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                             border: Border.all(
                                 width: 1,
                                 color: isCheckedFV
-                                    ? const Color(0xFF1694EF)
-                                    : Colors.grey),
+                                    ? ColorConst.continuebuttonBlue
+                                    : ColorConst.greyColor),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -311,7 +316,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                               ),
                               Checkbox(
                                 value: isCheckedFV,
-                                activeColor: const Color(0xFF1694EF),
+                                activeColor: ColorConst.continuebuttonBlue,
                                 onChanged: (bool? value) {
                                   setState(() {
                                     isCheckedFV = value!;
@@ -330,8 +335,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                             border: Border.all(
                                 width: 1,
                                 color: isCheckedOV
-                                    ? const Color(0xFF1694EF)
-                                    : Colors.grey),
+                                    ? ColorConst.continuebuttonBlue
+                                    : ColorConst.greyColor),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -342,7 +347,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                               ),
                               Checkbox(
                                 value: isCheckedOV,
-                                activeColor: const Color(0xFF1694EF),
+                                activeColor: ColorConst.continuebuttonBlue,
                                 onChanged: (bool? value) {
                                   setState(() {
                                     isCheckedOV = value!;
@@ -372,7 +377,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                         if (selectionMessage3.isNotEmpty)
                           Text(
                             selectionMessage3,
-                            style: const TextStyle(color: Colors.red),
+                            style: const TextStyle(color: ColorConst.redColor),
                           ),
                         if (selectionMessage3.isNotEmpty)
                           SizedBox(height: 16.h),
@@ -382,8 +387,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                             border: Border.all(
                                 width: 1,
                                 color: isCheckedDS
-                                    ? const Color(0xFF1694EF)
-                                    : Colors.grey),
+                                    ? ColorConst.continuebuttonBlue
+                                    : ColorConst.greyColor),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -394,7 +399,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                               ),
                               Checkbox(
                                 value: isCheckedDS,
-                                activeColor: const Color(0xFF1694EF),
+                                activeColor: ColorConst.continuebuttonBlue,
                                 onChanged: (bool? value) {
                                   setState(() {
                                     isCheckedDS = value!;
@@ -413,8 +418,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                             border: Border.all(
                                 width: 1,
                                 color: isCheckedNS
-                                    ? const Color(0xFF1694EF)
-                                    : Colors.grey),
+                                    ? ColorConst.continuebuttonBlue
+                                    : ColorConst.greyColor),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -425,7 +430,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                               ),
                               Checkbox(
                                 value: isCheckedNS,
-                                activeColor: const Color(0xFF1694EF),
+                                activeColor: ColorConst.continuebuttonBlue,
                                 onChanged: (bool? value) {
                                   setState(() {
                                     isCheckedNS = value!;
@@ -454,7 +459,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                     style: TextStyle(
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w400,
-                      color: const Color(0xFF848383),
+                      color: ColorConst.subtitleColor,
                     ),
                   ),
                   SizedBox(
@@ -499,7 +504,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                     hintStyle: TextStyle(
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w400,
-                                      color: const Color(0xFFAFADAD),
+                                      color: ColorConst.subtitleColor,
                                     ),
                                   ),
                                   onChanged: (value) {
@@ -554,7 +559,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                     : const Center(
                                         child: Text(
                                           "No Results",
-                                          style: TextStyle(color: Colors.grey),
+                                          style: TextStyle(
+                                              color: ColorConst.greyColor),
                                         ),
                                       )
                                 : const SizedBox(),
@@ -588,7 +594,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                               decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(32),
-                                                color: const Color(0xFF005FA4),
+                                                color: ColorConst.darkBlue,
                                                 boxShadow: [
                                                   BoxShadow(
                                                     color: Colors.black
@@ -609,12 +615,14 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                                   Text(
                                                     selectedAddresses[index],
                                                     style: const TextStyle(
-                                                        color: Colors.white),
+                                                        color: ColorConst
+                                                            .whiteColor),
                                                   ),
                                                   IconButton(
                                                     icon:
                                                         const Icon(Icons.close),
-                                                    color: Colors.white,
+                                                    color:
+                                                        ColorConst.whiteColor,
                                                     iconSize: 15.sp,
                                                     onPressed: () {
                                                       setState(() {
@@ -657,7 +665,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                         if (selectionMessage4.isNotEmpty)
                           Text(
                             selectionMessage4,
-                            style: const TextStyle(color: Colors.red),
+                            style: const TextStyle(color: ColorConst.redColor),
                           ),
                         if (selectionMessage4.isNotEmpty)
                           SizedBox(height: 16.h),
@@ -667,8 +675,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                             border: Border.all(
                                 width: 1,
                                 color: isCheckedC1
-                                    ? const Color(0xFF1694EF)
-                                    : Colors.grey),
+                                    ? ColorConst.continuebuttonBlue
+                                    : ColorConst.greyColor),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -679,7 +687,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                               ),
                               Checkbox(
                                 value: isCheckedC1,
-                                activeColor: const Color(0xFF1694EF),
+                                activeColor: ColorConst.continuebuttonBlue,
                                 onChanged: (bool? value) {
                                   setState(() {
                                     isCheckedC1 = value!;
@@ -698,8 +706,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                             border: Border.all(
                                 width: 1,
                                 color: isCheckedC2
-                                    ? const Color(0xFF1694EF)
-                                    : Colors.grey),
+                                    ? ColorConst.continuebuttonBlue
+                                    : ColorConst.greyColor),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -710,7 +718,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                               ),
                               Checkbox(
                                 value: isCheckedC2,
-                                activeColor: const Color(0xFF1694EF),
+                                activeColor: ColorConst.continuebuttonBlue,
                                 onChanged: (bool? value) {
                                   setState(() {
                                     isCheckedC2 = value!;
@@ -729,8 +737,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                             border: Border.all(
                                 width: 1,
                                 color: isCheckedC3
-                                    ? const Color(0xFF1694EF)
-                                    : Colors.grey),
+                                    ? ColorConst.continuebuttonBlue
+                                    : ColorConst.greyColor),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -741,7 +749,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                               ),
                               Checkbox(
                                 value: isCheckedC3,
-                                activeColor: const Color(0xFF1694EF),
+                                activeColor: ColorConst.continuebuttonBlue,
                                 onChanged: (bool? value) {
                                   setState(() {
                                     isCheckedC3 = value!;
@@ -770,7 +778,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                     style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 12.sp,
-                        color: const Color(0xFF848383)),
+                        color: ColorConst.subtitleColor),
                   ),
                   SizedBox(height: 16.h),
                   SingleChildScrollView(
@@ -813,7 +821,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                     hintStyle: TextStyle(
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w400,
-                                      color: const Color(0xFFAFADAD),
+                                      color: ColorConst.subtitleColor2,
                                     ),
                                   ),
                                   onChanged: (value) {
@@ -868,7 +876,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                     : const Center(
                                         child: Text(
                                           "No Results",
-                                          style: TextStyle(color: Colors.grey),
+                                          style: TextStyle(
+                                              color: ColorConst.greyColor),
                                         ),
                                       )
                                 : const SizedBox(),
@@ -903,10 +912,10 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                               decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(32),
-                                                color: const Color(0xFF005FA4),
+                                                color: ColorConst.darkBlue,
                                                 boxShadow: [
                                                   BoxShadow(
-                                                    color: Colors.black
+                                                    color: ColorConst.blackCOlor
                                                         .withOpacity(0.1),
                                                     spreadRadius: 2,
                                                     blurRadius: 3,
@@ -925,12 +934,14 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                                     selectedVolunteerTypes[
                                                         index],
                                                     style: const TextStyle(
-                                                        color: Colors.white),
+                                                        color: ColorConst
+                                                            .whiteColor),
                                                   ),
                                                   IconButton(
                                                     icon:
                                                         const Icon(Icons.close),
-                                                    color: Colors.white,
+                                                    color:
+                                                        ColorConst.whiteColor,
                                                     iconSize: 15.sp,
                                                     onPressed: () {
                                                       setState(() {
@@ -959,7 +970,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                   Padding(
                     padding: const EdgeInsets.only(right: 17.0),
                     child: Container(
-                      decoration: const BoxDecoration(color: Color(0xFFF4FAFE)),
+                      decoration:
+                          const BoxDecoration(color: ColorConst.borderColor),
                       width: 342.w,
                       height: 372.h,
                       child: Padding(
@@ -975,7 +987,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 12.sp,
-                                  color: const Color(0xFF848383)),
+                                  color: ColorConst.subtitleColor),
                             ),
                             if (selectionMessage.isNotEmpty)
                               Padding(
@@ -983,7 +995,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                 child: Text(
                                   selectionMessage,
                                   style: TextStyle(
-                                    color: Colors.red,
+                                    color: ColorConst.redColor,
                                     fontSize: 12.sp,
                                   ),
                                 ),
@@ -1012,14 +1024,14 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                         height: 36.h,
                                         decoration: BoxDecoration(
                                           color: isSelected[index]
-                                              ? Colors.blue
-                                              : Colors.white,
+                                              ? ColorConst.blueColor
+                                              : ColorConst.whiteColor,
                                           borderRadius:
                                               BorderRadius.circular(32),
                                           border: Border.all(
                                             color: isSelected[index]
-                                                ? Colors.transparent
-                                                : const Color(0xFFAFADAD),
+                                                ? ColorConst.transparent
+                                                : ColorConst.subtitleColor2,
                                           ),
                                         ),
                                         padding: const EdgeInsets.symmetric(
@@ -1030,8 +1042,8 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
                                             style: TextStyle(
                                               fontSize: 12.sp,
                                               color: isSelected[index]
-                                                  ? Colors.white
-                                                  : const Color(0xFF3D3C3C),
+                                                  ? ColorConst.whiteColor
+                                                  : ColorConst.subtitleColor2,
                                             ),
                                           ),
                                         ),
@@ -1093,7 +1105,7 @@ class _CreateProfileScreeNextnState extends State<CreateProfileNextScreen> {
               showSelectionDialog(context);
             }
           },
-          color: cupertinoButtonColor,
+          color: ColorConst.continuebuttonBlue,
           child: const Text('Next'),
         ),
       ),

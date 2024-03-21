@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vishwamitra_lang_screen/utils/colors.dart';
 
 class ProfileTab extends StatefulWidget {
   const ProfileTab({super.key});
@@ -32,7 +33,7 @@ class _ProfileTabState extends State<ProfileTab> {
                 width: 343.w,
                 height: 181.h,
                 decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0xFFAFADAD)),
+                  border: Border.all(color: ColorConst.subtitleColor2),
                   borderRadius: const BorderRadius.all(Radius.circular(8)),
                 ),
                 child: Row(
@@ -74,7 +75,7 @@ class _ProfileTabState extends State<ProfileTab> {
                                 Icon(
                                   Icons.edit,
                                   size: 18.sp,
-                                  color: const Color(0xFF848383),
+                                  color: ColorConst.subtitleColor,
                                 )
                               ],
                             ),
@@ -83,7 +84,7 @@ class _ProfileTabState extends State<ProfileTab> {
                               style: TextStyle(
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w400,
-                                  color: const Color(0xFF848383)),
+                                  color: ColorConst.subtitleColor),
                             ),
                             SizedBox(
                               height: 8.h,
@@ -95,13 +96,13 @@ class _ProfileTabState extends State<ProfileTab> {
                                   Icon(
                                     Icons.email,
                                     size: 12.sp,
-                                    color: const Color(0xFFAFADAD),
+                                    color: ColorConst.subtitleColor2,
                                   ),
                                   Text(
                                     'sunil.kumar123@gmail.com',
                                     style: TextStyle(
                                       fontSize: 12.sp,
-                                      color: const Color(0xFF848383),
+                                      color: ColorConst.subtitleColor,
                                     ),
                                   ),
                                 ],
@@ -114,12 +115,15 @@ class _ProfileTabState extends State<ProfileTab> {
                                   Icon(
                                     Icons.call,
                                     size: 12.sp,
-                                    color: const Color(0xFFAFADAD),
+                                    color: ColorConst.subtitleColor2,
                                   ),
-                                  Text('9176948068',
-                                      style: TextStyle(
-                                          fontSize: 12.sp,
-                                          color: const Color(0xFF848383))),
+                                  Text(
+                                    '9176948068',
+                                    style: TextStyle(
+                                      fontSize: 12.sp,
+                                      color: ColorConst.subtitleColor,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -129,14 +133,14 @@ class _ProfileTabState extends State<ProfileTab> {
                                 children: [
                                   Icon(
                                     Icons.location_on,
-                                    color: const Color(0xFFAFADAD),
+                                    color: ColorConst.subtitleColor,
                                     size: 12.sp,
                                   ),
                                   Text(
                                     'Pune, Maharashtra',
                                     style: TextStyle(
                                         fontSize: 14.sp,
-                                        color: const Color(0xFF848383),
+                                        color: ColorConst.subtitleColor,
                                         fontWeight: FontWeight.w400),
                                   ),
                                 ],
@@ -151,15 +155,14 @@ class _ProfileTabState extends State<ProfileTab> {
                                     const Icon(
                                       size: 15,
                                       Icons.share_sharp,
-                                      color: Color(0xFF1694EF),
+                                      color: ColorConst.continuebuttonBlue,
                                     ),
                                     SizedBox(width: 5.w),
                                     const Text(
                                       'Share profile',
                                       style: TextStyle(
-                                        color: Color(0xFF1694EF),
-                                        fontSize: 14
-                                      ),
+                                          color: ColorConst.continuebuttonBlue,
+                                          fontSize: 14),
                                     )
                                   ],
                                 ),

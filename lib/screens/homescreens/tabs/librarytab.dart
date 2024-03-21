@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vishwamitra_lang_screen/utils/colors.dart';
 
 class LibraryTab extends StatefulWidget {
   const LibraryTab({super.key});
@@ -33,7 +34,7 @@ class _LibraryTabState extends State<LibraryTab> {
                     width: 94.w,
                     child: CupertinoButton(
                       onPressed: () {},
-                      color: Colors.blue,
+                      color: ColorConst.blueColor,
                       borderRadius: const BorderRadius.all(Radius.circular(34)),
                       padding: EdgeInsets.zero,
                       child: const Row(
@@ -86,11 +87,11 @@ class LibraryCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.0),
-        color: const Color(0xFFF5F5F5),
-        border: Border.all(width: 1, color: const Color(0xFFAFADAD)),
+        color: ColorConst.cardBorder,
+        border: Border.all(width: 1, color: ColorConst.subtitleColor2),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
+            color: ColorConst.greyColor.withOpacity(0.5),
           ),
         ],
       ),
