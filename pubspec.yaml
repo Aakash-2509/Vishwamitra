@@ -38,6 +38,8 @@ dependencies:
   get: ^4.6.6
   flutter_screenutil: ^5.9.0
   sizer: ^2.0.15
+  getwidget: ^4.0.0
+  url_launcher: ^6.2.5
 
 dev_dependencies:
   flutter_test:
