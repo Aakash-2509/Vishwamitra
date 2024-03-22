@@ -22,6 +22,7 @@ class ColorConst {
   static const Color darkBlue = Color(0xFF005FA4);
   static const Color subtitleColor2 = Color(0xFFAFADAD);
   static const Color borderColor = Color(0xFFF4FAFE);
+  static const Color textColor =Color(0xFF3D3C3C); 
 
   // Last submit
   static const Color yellowColor = Colors.yellow;

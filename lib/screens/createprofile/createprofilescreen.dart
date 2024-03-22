@@ -202,7 +202,10 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
         child: CupertinoButton(
           onPressed: () {
             if (_formKey.currentState!.validate()) {
-              Get.to(const CreateProfileNextScreen());
+              Get.to(CreateProfileNextScreen(
+                phoneNumber: phoneController.text,
+                userName: nameController.text,
+              ));
             }
           },
           color: ColorConst.continuebuttonBlue,

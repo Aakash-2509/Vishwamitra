@@ -1,8 +1,10 @@
+import 'package:avatar_stack/avatar_stack.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+import 'package:vishwamitra_lang_screen/screens/homescreens/tabs/body/avatarstcakscreen.dart';
+import 'package:vishwamitra_lang_screen/utils/colors.dart';
 
 class MainCard extends StatefulWidget {
   const MainCard({super.key});
@@ -17,27 +19,21 @@ class _MainCardState extends State<MainCard> {
     return Container(
       padding: const EdgeInsets.all(5),
       margin: const EdgeInsets.all(14),
-      height: 302,
+      height: 350,
       width: double.infinity,
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.black, width: 1),
-        color: Colors.white,
+        border: Border.all(color: ColorConst.blackCOlor, width: 1),
+        color: ColorConst.whiteColor,
         borderRadius: BorderRadius.circular(12),
-        // image: const DecorationImage(
-        //   image: AssetImage('assets/images/background.jpg'),
-        //   fit: BoxFit.cover,
-        // ),
       ),
       child: Column(
         children: [
           Container(
             height: 150,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: ColorConst.whiteColor,
               borderRadius: BorderRadius.circular(10),
               image: const DecorationImage(
-                // image: NetworkImage(
-                //     'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg'),
                 image: AssetImage('assets/img/bg.jpeg'),
                 fit: BoxFit.cover,
               ),
@@ -47,7 +43,7 @@ class _MainCardState extends State<MainCard> {
                 Container(
                   height: 150,
                   decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(.3),
+                    color: ColorConst.blackCOlor.withOpacity(.3),
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
@@ -59,7 +55,7 @@ class _MainCardState extends State<MainCard> {
                       const Text(
                         "Robinhood acadmaybe (1/3)",
                         style: TextStyle(
-                            color: Colors.white,
+                            color: ColorConst.whiteColor,
                             fontSize: 16,
                             fontWeight: FontWeight.w600),
                       ),
@@ -68,14 +64,14 @@ class _MainCardState extends State<MainCard> {
                         height: 20,
                         width: 35,
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: ColorConst.whiteColor,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: const Row(
                           children: [
                             Icon(
                               Icons.heart_broken,
-                              color: Colors.red,
+                              color: ColorConst.redColor,
                               size: 15,
                             ),
                             Text(
@@ -95,7 +91,7 @@ class _MainCardState extends State<MainCard> {
                   child: IconButton(
                     icon: const Icon(
                       Icons.share,
-                      color: Colors.white,
+                      color: ColorConst.whiteColor,
                     ),
                     onPressed: () {},
                   ),
@@ -106,7 +102,7 @@ class _MainCardState extends State<MainCard> {
                   child: IconButton(
                     icon: const Icon(
                       Icons.bookmark_add_outlined,
-                      color: Colors.white,
+                      color: ColorConst.whiteColor,
                     ),
                     onPressed: () {},
                   ),
@@ -119,7 +115,14 @@ class _MainCardState extends State<MainCard> {
           ),
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [Text('Craft & Social activity'), Text('activity')],
+            children: [
+              Text('Craft & Social activity'),
+              SizedBox(
+                height: 50,
+                width: 50,
+                child: AvatarStackDemo(),
+              )
+            ],
           ),
           const Row(
             children: [
@@ -137,7 +140,7 @@ class _MainCardState extends State<MainCard> {
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
-                      color: Color(0xFF848383),
+                      color: ColorConst.subtitleColor,
                     ),
                   ),
                   SizedBox(
@@ -169,7 +172,7 @@ class _MainCardState extends State<MainCard> {
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w400,
-                  color: Color(0xFF848383),
+                  color: ColorConst.subtitleColor,
                 ),
               ),
               SizedBox(
@@ -196,7 +199,7 @@ class _MainCardState extends State<MainCard> {
                       child: const Text(
                         'www.robinhoodacademy.org',
                         style: TextStyle(
-                          color: Colors.blue,
+                          color: ColorConst.blueColor,
                           decoration: TextDecoration.underline,
                         ),
                       ),
@@ -211,7 +214,7 @@ class _MainCardState extends State<MainCard> {
                 onPressed: () {
                   launchUrlString('https://www.robinhoodacademy.org');
                 },
-                color: Colors.blue,
+                color: ColorConst.blueColor,
                 minSize:
                     0, // Set minSize to 0 to allow the button to be smaller
                 padding: EdgeInsets
@@ -232,7 +235,7 @@ class _MainCardState extends State<MainCard> {
           Container(
             height: 1,
             width: 290,
-            color: Colors.grey,
+            color: ColorConst.greyColor,
           ),
           const Icon(Icons.arrow_drop_down),
         ],
