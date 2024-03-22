@@ -11,10 +11,12 @@ class NewOpportunities extends StatefulWidget {
 class _NewOpportunitiesState extends State<NewOpportunities> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Padding(
-        padding: EdgeInsets.only(left: 14, top: 16, right: 14),
-        child: MainCard(),
+    return Center(
+      child: Column(
+        children: [
+          MainCard(),
+          MainCard(),
+        ],
       ),
     );
   }

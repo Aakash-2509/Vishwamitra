@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vishwamitra_lang_screen/screens/homescreens/tabs/hometab.dart';
+import 'package:vishwamitra_lang_screen/screens/homescreens/tabs/home/hometab.dart';
 import 'package:vishwamitra_lang_screen/screens/homescreens/tabs/librarytab.dart';
 import 'package:vishwamitra_lang_screen/screens/homescreens/tabs/profiletab.dart';
 import 'package:vishwamitra_lang_screen/screens/homescreens/tabs/searchexploretab.dart';
